@@ -1,0 +1,6 @@
+{
+  "name": "Anti-Risk Security",
+  "description": "The official cloned website of Anti-Risk Security and Safety Services Provider, offering manned guarding, VIP escort, electronic security, event security, and security consulting in Nigeria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
