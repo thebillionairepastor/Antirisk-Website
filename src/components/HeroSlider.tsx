@@ -10,14 +10,22 @@ interface HeroSliderProps {
 const slides: Slide[] = [
   {
     id: 1,
-    image: '/src/assets/images/nigerian_security_officers_1784299309672.jpg', // security guard uniformed standing
+    image: '/src/assets/images/security_guards_parade_1786474226648.jpg', // Official Anti-Risk Security parade with flag & vehicles
     tagline: 'We insist on',
     titlePrefix: 'The best of ',
     titleHighlighted: 'the best',
-    description: 'only the best hands and brains in the industry with years of experience',
+    description: 'Only the best hands and brains in the industry with years of rigorous protection experience.',
   },
   {
     id: 2,
+    image: '/src/assets/images/guards_lineup_hero_1786457870663.jpg', // Official Anti-Risk squad lineup at Operational HQ
+    tagline: 'Manned Security Force',
+    titlePrefix: 'Disciplined ',
+    titleHighlighted: 'Security Officers',
+    description: '100% police-vetted, impeccably uniformed sentinels safeguarding high-value corporate & industrial sites.',
+  },
+  {
+    id: 3,
     image: '/src/assets/images/vip_security_escort_1784299328559.jpg', // secure professionals in dark suits
     tagline: 'VIP Close Protection',
     titlePrefix: 'Elite Armed ',
@@ -25,7 +33,7 @@ const slides: Slide[] = [
     description: 'Secure logistical transit, defensive convoys, and highly trained executive bodyguards.',
   },
   {
-    id: 3,
+    id: 4,
     image: '/src/assets/images/smart_surveillance_center_1784299347627.jpg', // surveillance cctv monitoring screens
     tagline: 'Smart Surveillance',
     titlePrefix: 'Integrated Tech ',
@@ -33,20 +41,12 @@ const slides: Slide[] = [
     description: 'Advanced AI CCTV monitoring, biometric access control, and 24/7 central control rooms.',
   },
   {
-    id: 4,
+    id: 5,
     image: '/src/assets/images/k9_unit_patrol_1784299580956.jpg', // K9 patrol unit
     tagline: 'K9 Guard Dog Force',
     titlePrefix: 'Elite Canine ',
     titleHighlighted: 'Patrol unit',
     description: 'Highly trained security dogs and expert handlers for residential, corporate, and event protection.',
-  },
-  {
-    id: 5,
-    image: '/src/assets/images/maritime_patrol_1784299597812.jpg', // Maritime escort patrol
-    tagline: 'Maritime Escort',
-    titlePrefix: 'Industrial Marine ',
-    titleHighlighted: 'Logistics safety',
-    description: 'Vessel protection, harbor patrol, and high-value shipping security in West African coastal waters.',
   },
 ];
 

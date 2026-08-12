@@ -10,6 +10,12 @@ interface ServicesGridProps {
 
 export default function ServicesGrid({ onServiceSelect, onContactClick }: ServicesGridProps) {
   const [activeModal, setActiveModal] = useState<ExtendedSecurityService | null>(null);
+  const [modalImageIndex, setModalImageIndex] = useState<number>(0);
+
+  const handleOpenModal = (service: ExtendedSecurityService) => {
+    setActiveModal(service);
+    setModalImageIndex(0);
+  };
 
   const getIconComponent = (iconName: string) => {
     const classes = "w-8 h-8 text-inherit";
@@ -70,7 +76,7 @@ export default function ServicesGrid({ onServiceSelect, onContactClick }: Servic
           {servicesData.map((service) => (
             <div
               key={service.id}
-              onClick={() => setActiveModal(service)}
+              onClick={() => handleOpenModal(service)}
               className="bg-slate-50 border border-gray-100 hover:border-brand-lime hover:bg-white p-6 rounded-sm shadow-xs hover:shadow-lg transition-all duration-300 group cursor-pointer flex flex-col justify-between"
               id={`service-card-${service.id}`}
             >
@@ -86,6 +92,11 @@ export default function ServicesGrid({ onServiceSelect, onContactClick }: Servic
                   <div className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-brand-lime shadow-sm group-hover:bg-brand-lime group-hover:text-white transition-colors duration-300">
                     {getIconComponent(service.icon)}
                   </div>
+                  {service.gallery && service.gallery.length > 0 && (
+                    <span className="absolute top-3 right-3 bg-brand-navy/90 text-white text-[9px] font-mono px-2 py-0.5 rounded-xs font-semibold tracking-wider backdrop-blur-xs border border-white/20">
+                      {service.gallery.length} Real HQ Photos
+                    </span>
+                  )}
                 </div>
 
                 <h3 className="text-base font-display font-extrabold text-brand-navy mb-2 group-hover:text-brand-lime transition-colors leading-snug line-clamp-2">
@@ -121,15 +132,38 @@ export default function ServicesGrid({ onServiceSelect, onContactClick }: Servic
               </button>
 
               {/* Modal Banner Area with Image */}
-              <div className="h-48 relative overflow-hidden flex items-end">
+              <div className="h-56 relative overflow-hidden flex items-end">
                 <img 
-                  src={activeModal.image} 
+                  src={activeModal.gallery && activeModal.gallery[modalImageIndex] ? activeModal.gallery[modalImageIndex] : activeModal.image} 
                   alt={activeModal.title} 
                   referrerPolicy="no-referrer"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
-                <div className="relative p-6 text-white flex items-center gap-4 w-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                
+                {/* Photo Gallery Switcher if multiple images exist */}
+                {activeModal.gallery && activeModal.gallery.length > 1 && (
+                  <div className="absolute top-4 left-4 flex items-center gap-2 z-10 bg-black/60 backdrop-blur-md p-1.5 rounded-sm border border-white/20">
+                    <span className="text-[10px] font-display font-bold text-white uppercase tracking-wider px-1">
+                      Real Photos:
+                    </span>
+                    {activeModal.gallery.map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setModalImageIndex(idx)}
+                        className={`px-2 py-0.5 rounded-xs text-[10px] font-mono font-bold transition-all cursor-pointer ${
+                          modalImageIndex === idx 
+                            ? 'bg-brand-lime text-white shadow-xs' 
+                            : 'bg-white/20 text-white hover:bg-white/40'
+                        }`}
+                      >
+                        Photo {idx + 1}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                <div className="relative p-6 text-white flex items-center gap-4 w-full z-10">
                   <div className="w-12 h-12 bg-white/25 backdrop-blur-md rounded-md flex items-center justify-center text-brand-lime flex-shrink-0 border border-white/20">
                     {getIconComponent(activeModal.icon)}
                   </div>

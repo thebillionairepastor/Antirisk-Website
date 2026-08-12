@@ -15,27 +15,9 @@ export default function ContactForm({ initialService = '' }: ContactFormProps) {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
-  const [activeBranch, setActiveBranch] = useState('lagos');
+  const [activeBranch, setActiveBranch] = useState('ph');
 
   const branches = [
-    {
-      id: 'lagos',
-      name: 'Lagos Headquarters',
-      shortLabel: 'Lagos (HQ)',
-      address: 'Plot 15, Alhaji Hussein Street, Ikeja, Lagos State, Nigeria.',
-      phone: '+234 805 731 5673',
-      email: 'lagos.ops@antiriskng.com',
-      hours: '8:00 AM - 6:00 PM (Mon-Sat)',
-    },
-    {
-      id: 'abuja',
-      name: 'Abuja Regional Branch',
-      shortLabel: 'Abuja',
-      address: 'Suite 4A, Garki II Commercial Plaza, Area 11, Garki, Abuja, Nigeria.',
-      phone: '+234 802 112 4432',
-      email: 'abuja.ops@antiriskng.com',
-      hours: '8:30 AM - 5:30 PM (Mon-Fri)',
-    },
     {
       id: 'ph',
       name: 'Port Harcourt Maritime Terminal',
@@ -382,40 +364,10 @@ export default function ContactForm({ initialService = '' }: ContactFormProps) {
 
                   {/* Operational Network Lines */}
                   <g stroke="#dc2626" strokeWidth="1.5" strokeDasharray="2 3" opacity="0.6">
-                    <line x1="120" y1="210" x2="250" y2="120" /> {/* Lagos - Abuja */}
-                    <line x1="250" y1="120" x2="280" y2="240" /> {/* Abuja - PH */}
-                    <line x1="120" y1="210" x2="280" y2="240" /> {/* Lagos - PH */}
-                    <line x1="120" y1="210" x2="135" y2="195" /> {/* Lagos - Oyo */}
                     <line x1="280" y1="240" x2="290" y2="220" /> {/* PH - Abia */}
                     <line x1="280" y1="240" x2="320" y2="240" /> {/* PH - Calabar */}
-                    <line x1="250" y1="120" x2="290" y2="220" /> {/* Abuja - Abia */}
-                    <line x1="250" y1="120" x2="320" y2="240" /> {/* Abuja - Calabar */}
-                  </g>
-
-                  {/* BRANCH 1: LAGOS (Active) */}
-                  <g
-                    className="cursor-pointer group"
-                    onClick={() => setActiveBranch('lagos')}
-                  >
-                    <circle cx="120" cy="210" r="14" fill="#dc2626" fillOpacity="0.15" />
-                    <circle cx="120" cy="210" r="7" fill="#dc2626" className="group-hover:scale-125 transition-transform" />
-                    <circle cx="120" cy="210" r="3" fill="#ffffff" />
-                    <text x="120" y="235" textAnchor="middle" className="text-[10px] font-display font-extrabold fill-brand-navy">
-                      LAGOS (HQ)
-                    </text>
-                  </g>
-
-                  {/* BRANCH 2: ABUJA (Active) */}
-                  <g
-                    className="cursor-pointer group"
-                    onClick={() => setActiveBranch('abuja')}
-                  >
-                    <circle cx="250" cy="120" r="14" fill="#dc2626" fillOpacity="0.15" />
-                    <circle cx="250" cy="120" r="7" fill="#dc2626" className="group-hover:scale-125 transition-transform" />
-                    <circle cx="250" cy="120" r="3" fill="#ffffff" />
-                    <text x="250" y="100" textAnchor="middle" className="text-[10px] font-display font-extrabold fill-brand-navy">
-                      ABUJA HUB
-                    </text>
+                    <line x1="135" y1="195" x2="280" y2="240" /> {/* Oyo - PH */}
+                    <line x1="290" y1="220" x2="320" y2="240" /> {/* Abia - Calabar */}
                   </g>
 
                   {/* BRANCH 3: PORT HARCOURT (Active) */}

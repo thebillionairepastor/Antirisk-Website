@@ -76,25 +76,45 @@ export default function WelcomeSection({ onContactClick }: WelcomeSectionProps) 
             </div>
           </div>
 
-          {/* Image box representing professional security */}
-          <div className="lg:col-span-5 relative">
-            <div className="absolute -inset-1.5 bg-brand-lime rounded-sm opacity-20 blur-sm"></div>
-            <div className="relative overflow-hidden rounded-sm border border-gray-200 shadow-2xl group">
+          {/* Image box representing real company photos */}
+          <div className="lg:col-span-5 relative space-y-4">
+            <div className="relative overflow-hidden rounded-sm border border-gray-200 shadow-xl group">
               <img
-                src="/src/assets/images/nigerian_security_officers_1784299309672.jpg"
-                alt="Anti-Risk Security Guards in Uniform"
-                className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-700"
+                src="/src/assets/images/security_guards_parade_1786474226648.jpg"
+                alt="Anti-Risk Security Parade and HQ Flag"
+                className="w-full h-[240px] md:h-[260px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               
-              {/* Badge Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md border border-gray-100 p-4 rounded-sm shadow-lg flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-brand-lime flex items-center justify-center text-white flex-shrink-0">
-                  <ShieldCheck className="w-5 h-5 stroke-[2.5]" />
+              <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md border border-gray-100 p-3 rounded-sm shadow-lg flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-brand-lime flex items-center justify-center text-white flex-shrink-0">
+                    <ShieldCheck className="w-4 h-4 stroke-[2.5]" />
+                  </div>
+                  <div>
+                    <h4 className="font-display font-bold text-xs text-brand-navy uppercase tracking-wide">Official Anti-Risk HQ</h4>
+                    <p className="text-[10px] font-sans text-gray-500">Parade Ground & Flag Stand Inspection</p>
+                  </div>
+                </div>
+                <span className="bg-brand-navy text-white text-[9px] font-mono px-2 py-0.5 rounded-xs font-semibold uppercase tracking-wider">Verified</span>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-sm border border-gray-200 shadow-xl group">
+              <img
+                src="/src/assets/images/guards_lineup_hero_1786457870663.jpg"
+                alt="Anti-Risk Security Guards Lineup in Uniform"
+                className="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              
+              <div className="absolute bottom-3 left-3 right-3 bg-brand-navy/95 backdrop-blur-md border border-brand-navy p-3 rounded-sm shadow-lg flex items-center gap-3 text-white">
+                <div className="w-8 h-8 rounded-full bg-brand-lime flex items-center justify-center text-white flex-shrink-0">
+                  <Users className="w-4 h-4 stroke-[2.5]" />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-xs text-brand-navy uppercase tracking-wide">NSCDC Certified Force</h4>
-                  <p className="text-[10px] font-sans text-gray-500">Fully Licensed Class-A Security Operators</p>
+                  <h4 className="font-display font-bold text-xs text-white uppercase tracking-wide">Class-A Guard Force</h4>
+                  <p className="text-[10px] font-sans text-gray-300">Operational Personnel & Sentinel Division</p>
                 </div>
               </div>
             </div>

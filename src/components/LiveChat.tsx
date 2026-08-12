@@ -7,8 +7,10 @@ import {
   Clock, 
   HelpCircle, 
   CheckCheck,
-  AlertTriangle
+  AlertTriangle,
+  FileText
 } from 'lucide-react';
+import { Page } from '../types';
 
 interface ChatMessage {
   id: string;
@@ -16,9 +18,14 @@ interface ChatMessage {
   sender: 'user' | 'bot';
   timestamp: string;
   source?: string;
+  triggerContactForm?: boolean;
 }
 
-export default function LiveChat() {
+interface LiveChatProps {
+  setCurrentPage?: (page: Page) => void;
+}
+
+export default function LiveChat({ setCurrentPage }: LiveChatProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputValue, setInputValue] = useState<string>('');
@@ -116,7 +123,8 @@ export default function LiveChat() {
         text: data.response || "Copy that. We are dispatching intelligence updates to your query shortly.",
         sender: 'bot',
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        source: data.source || 'Officer Grace | Dispatch'
+        source: data.source || 'Officer Grace | Dispatch',
+        triggerContactForm: data.triggerContactForm || false
       };
 
       setMessages(prev => [...prev, botMessage]);
@@ -254,6 +262,21 @@ export default function LiveChat() {
                       </div>
                     )}
                     <p className="whitespace-pre-line">{msg.text}</p>
+                    {isBot && msg.triggerContactForm && setCurrentPage && (
+                      <div className="mt-3 pt-2.5 border-t border-slate-800/60 text-left">
+                        <button
+                          onClick={() => {
+                            setCurrentPage('contact');
+                            setIsOpen(false);
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                          className="inline-flex items-center gap-1.5 px-3 py-2 bg-brand-lime hover:bg-white text-slate-950 font-bold text-[10px] uppercase tracking-wider rounded-sm transition-all cursor-pointer font-sans"
+                        >
+                          <FileText className="w-3.5 h-3.5" />
+                          <span>Initiate Official Inquiry Form</span>
+                        </button>
+                      </div>
+                    )}
                   </div>
 
                   {/* Metadata line under bubble */}

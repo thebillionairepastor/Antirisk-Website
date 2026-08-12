@@ -20,6 +20,7 @@ import TrustedPartners from './components/TrustedPartners';
 import SecurityBriefings from './components/SecurityBriefings';
 import LiveChat from './components/LiveChat';
 import RegionalHubs from './components/RegionalHubs';
+import SecurityTipsToast from './components/SecurityTipsToast';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -262,7 +263,7 @@ export default function App() {
           <div id="contact-view" className="animate-fade-in">
             <PageHeaderBanner
               title="Contact Us"
-              subtitle="Book a protective service, order tactical guard details, or query our regional command stations in Lagos, Abuja, and Port Harcourt."
+              subtitle="Book a protective service, order tactical guard details, or query our regional command stations across Port Harcourt, Calabar, Oyo, and Abia."
             />
             <ContactForm initialService={selectedService} />
           </div>
@@ -334,7 +335,10 @@ export default function App() {
       <Footer setCurrentPage={setCurrentPage} />
 
       {/* FLOATING LIVE CHAT SUPPORT DESK */}
-      <LiveChat />
+      <LiveChat setCurrentPage={setCurrentPage} />
+
+      {/* PERIODIC DAILY SECURITY TIPS TOAST */}
+      <SecurityTipsToast />
 
     </div>
   );

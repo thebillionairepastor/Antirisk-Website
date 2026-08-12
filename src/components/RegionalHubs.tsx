@@ -36,38 +36,6 @@ interface Station {
 
 const stations: Station[] = [
   {
-    id: 'lagos',
-    name: 'Lagos Headquarters & Command Center',
-    city: 'Lagos',
-    region: 'South-West Sector',
-    address: 'Plot 15, Alhaji Hussein Street, Ikeja, Lagos State, Nigeria.',
-    phone: '+234 805 731 5673',
-    email: 'lagos.ops@antiriskng.com',
-    hours: '8:00 AM - 6:00 PM (Mon-Sat)',
-    commander: 'Commander Samuel Adebayo',
-    fleetCount: 24,
-    guardCount: 150,
-    specialization: 'Maritime Security Logistics, Executive Escorts, Vulnerability Consulting',
-    coordinates: { x: 120, y: 210 },
-    status: 'Operational'
-  },
-  {
-    id: 'abuja',
-    name: 'Abuja Federal Capital Territory Command',
-    city: 'Abuja',
-    region: 'North-Central Sector',
-    address: 'Suite 4A, Garki II Commercial Plaza, Area 11, Garki, Abuja, Nigeria.',
-    phone: '+234 802 112 4432',
-    email: 'abuja.ops@antiriskng.com',
-    hours: '8:30 AM - 5:30 PM (Mon-Fri)',
-    commander: 'Superintendent Ibrahim Yusuf',
-    fleetCount: 12,
-    guardCount: 80,
-    specialization: 'Diplomatic Convoy Protection, VIP Close Protection, Embassy Audits',
-    coordinates: { x: 250, y: 120 },
-    status: 'Operational'
-  },
-  {
     id: 'calabar',
     name: 'Calabar South-South Regional Command',
     city: 'Calabar',
@@ -118,7 +86,7 @@ const stations: Station[] = [
 ];
 
 export default function RegionalHubs() {
-  const [activeStationId, setActiveStationId] = useState<string>('lagos');
+  const [activeStationId, setActiveStationId] = useState<string>('calabar');
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [copiedId, setCopiedId] = useState<string | null>(null);
   
@@ -177,7 +145,7 @@ export default function RegionalHubs() {
           <div className="relative">
             <input
               type="text"
-              placeholder="Search station (e.g. Lagos, Abuja, Abia...)"
+              placeholder="Search station (e.g. Calabar, Oyo, Abia...)"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-gray-200 focus:border-brand-lime rounded-sm outline-none font-sans text-xs md:text-sm text-brand-navy shadow-xs placeholder:text-gray-400 transition-colors"

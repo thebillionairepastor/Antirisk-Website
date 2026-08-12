@@ -4,6 +4,7 @@ export interface ExtendedSecurityService extends SecurityService {
   pageKey: Page;
   longBio: string;
   image: string;
+  gallery?: string[];
   technologyUsed: string[];
 }
 
@@ -16,7 +17,11 @@ export const servicesData: ExtendedSecurityService[] = [
     longDescription: 'Our Routine & General Duty guarding force represents the absolute foundation of robust physical security. Each security officer undergoes background verification checks through state police systems, fingerprint registers, and reliable guarantor audits. We deploy alert, courteous, and immaculately dressed sentinels to safeguard corporate offices, residential estates, financial institutions, and manufacturing sites.',
     longBio: 'Anti-Risk’s Routine & General Duty Sentinels represent our first line of physical defense. Under our strict policy, guards are not merely observers—they are active responders. Each sentinel is trained at our Academy in conflict de-escalation, rapid panic notifications, access gates verification, and fire prevention. We pair physical patrols with electronic clocking tools to ensure absolute coverage, 24 hours a day, 365 days a year.',
     icon: 'shield',
-    image: '/src/assets/images/nigerian_security_officers_1784299309672.jpg',
+    image: '/src/assets/images/security_guards_parade_1786474226648.jpg',
+    gallery: [
+      '/src/assets/images/security_guards_parade_1786474226648.jpg',
+      '/src/assets/images/guards_lineup_hero_1786457870663.jpg'
+    ],
     features: [
       '24/7 Static & Active Perimeter Patrol Sentinels',
       'Electronic RFID Guard Clocking & Verification',

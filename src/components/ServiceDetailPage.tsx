@@ -10,6 +10,7 @@ interface ServiceDetailPageProps {
 }
 
 export default function ServiceDetailPage({ service, onBackToServices, onSuccessSubmit }: ServiceDetailPageProps) {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -41,13 +42,35 @@ export default function ServiceDetailPage({ service, onBackToServices, onSuccess
       {/* Dynamic 4K Hero Banner */}
       <div className="relative h-[45vh] min-h-[350px] overflow-hidden flex items-end">
         <img 
-          src={service.image} 
+          src={service.gallery && service.gallery[activeImageIndex] ? service.gallery[activeImageIndex] : service.image} 
           alt={service.title} 
           referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover transform scale-102 hover:scale-100 transition-transform duration-[4000ms]"
+          className="absolute inset-0 w-full h-full object-cover transform scale-102 hover:scale-100 transition-all duration-[2000ms]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-black/10"></div>
         
+        {/* Gallery Switcher if available */}
+        {service.gallery && service.gallery.length > 1 && (
+          <div className="absolute top-6 right-6 z-20 flex items-center gap-2 bg-black/60 backdrop-blur-md p-2 rounded-sm border border-white/20">
+            <span className="text-[10px] font-display font-bold text-white uppercase tracking-wider px-1">
+              Real Company Photos:
+            </span>
+            {service.gallery.map((img, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveImageIndex(idx)}
+                className={`px-2.5 py-1 rounded-xs text-[10px] font-mono font-bold transition-all cursor-pointer ${
+                  activeImageIndex === idx 
+                    ? 'bg-brand-lime text-white shadow-sm' 
+                    : 'bg-white/20 text-white hover:bg-white/40'
+                }`}
+              >
+                Photo {idx + 1}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* Banner content */}
         <div className="relative w-full max-w-7xl mx-auto px-4 pb-12 z-10 text-white space-y-4">
           <button
