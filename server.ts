@@ -536,7 +536,7 @@ FAQ KNOWLEDGE BASE:
 REGIONAL HUBS DIRECTORY:
 - Lagos Headquarters (Ikeja): Plot 15, Alhaji Hussein Street, Ikeja, Lagos State, Nigeria. Phone: +234 805 731 5673. Email: lagos.ops@antiriskng.com. Commander Samuel Adebayo. 150+ Guards, 24 Patrol Units.
 - Abuja Regional Command (Garki): Suite 4A, Garki II Commercial Plaza, Area 11, Garki, Abuja, Nigeria. Phone: +234 802 112 4432. Email: abuja.ops@antiriskng.com. Superintendent Ibrahim Yusuf. 80+ Guards, 12 Patrol Units.
-- Port Harcourt Maritime (Trans-Amadi): Trans-Amadi Industrial Layout, Port Harcourt, Rivers State, Nigeria. Phone: +234 805 731 5680. Email: calabar.ops@antiriskng.com. (Port Harcourt works in sync with Calabar operations).
+- Port Harcourt Maritime (Eleme Junction): 53B Eleme Junction Road, Umuogodo Igbo Etche, Port Harcourt, Rivers State, Nigeria. Phone: +234 805 731 5680. Email: calabar.ops@antiriskng.com. (Port Harcourt works in sync with Calabar operations).
 - Calabar South-South Command (Ndidem Usang Iso): Suite 12, Ndidem Usang Iso Road, Calabar, Cross River State, Nigeria. Phone: +234 805 731 5680. Email: calabar.ops@antiriskng.com. Captain Effiong Edet. 50+ Guards, 8 Patrol Units.
 - Oyo Western Sector (Ibadan): Sector 3, Ring Road Industrial Estate, Ibadan, Oyo State, Nigeria. Phone: +234 802 112 4435. Email: oyo.ops@antiriskng.com. Assistant Commander Segun Ojo. 65+ Guards, 10 Patrol Units.
 - Abia Eastern Command (Aba): Aba-Owerri Road Express Sector, Aba, Abia State, Nigeria. Phone: +234 809 334 7768. Email: abia.ops@antiriskng.com. Commander Kenneth Nwachukwu. 90+ Guards, 14 Patrol Units.

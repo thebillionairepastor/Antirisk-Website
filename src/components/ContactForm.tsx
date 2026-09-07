@@ -22,7 +22,7 @@ export default function ContactForm({ initialService = '' }: ContactFormProps) {
       id: 'ph',
       name: 'Port Harcourt Maritime Terminal',
       shortLabel: 'Port Harcourt',
-      address: 'Block B, Trans-Amadi Industrial Layout, Port Harcourt, Rivers State, Nigeria.',
+      address: '53B Eleme Junction Road, Umuogodo Igbo Etche, Port Harcourt, Rivers State, Nigeria.',
       phone: '+234 809 334 7765',
       email: 'ph.ops@antiriskng.com',
       hours: '8:00 AM - 5:00 PM (Mon-Sat)',
