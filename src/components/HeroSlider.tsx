@@ -48,6 +48,38 @@ const slides: Slide[] = [
     titleHighlighted: 'Patrol unit',
     description: 'Highly trained security dogs and expert handlers for residential, corporate, and event protection.',
   },
+  {
+    id: 6,
+    image: '/src/assets/images/guards_formation_1.png',
+    tagline: 'Operational Readiness',
+    titlePrefix: 'Disciplined ',
+    titleHighlighted: 'Field Formations',
+    description: 'Our officers stand ready in structured formations, prepared for deployment across high-value sites.',
+  },
+  {
+    id: 7,
+    image: '/src/assets/images/guards_formation_2.png',
+    tagline: 'Guard Force Parade',
+    titlePrefix: 'Vetted & ',
+    titleHighlighted: 'Uniformed Sentinels',
+    description: 'Rigorously trained and impeccably uniformed personnel parading at our regional command headquarters.',
+  },
+  {
+    id: 8,
+    image: '/src/assets/images/guards_formation_3.png',
+    tagline: 'Tactical Briefing',
+    titlePrefix: 'Pre-Deployment ',
+    titleHighlighted: 'Drill & Instruction',
+    description: 'Every shift begins with structured tactical briefings to ensure peak alertness and operational coordination.',
+  },
+  {
+    id: 9,
+    image: '/src/assets/images/guards_formation_4.png',
+    tagline: 'Training Ground',
+    titlePrefix: 'Elite ',
+    titleHighlighted: 'Field Training',
+    description: 'Hands-on field instruction ensuring every officer meets our uncompromising protection standards.',
+  },
 ];
 
 export default function HeroSlider({ onLearnMore }: HeroSliderProps) {
